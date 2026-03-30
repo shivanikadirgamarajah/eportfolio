@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
 
-## Getting Started
+A modern, animated portfolio website built with cutting-edge technologies to showcase projects, skills, and experience. Features smooth animations, responsive design, and an engaging user interface.
 
-First, run the development server:
+## Features
 
+- **Animated Hero Section** - Dynamic name animation and engaging visual effects
+- **Lava Blob Design** - Eye-catching gradient background animations
+- **Skills Showcase** - Visual display of technical skills with icons
+- **Projects Section** - Highlight your best work
+- **Contact Page** - Easy way for visitors to get in touch
+- **Responsive Design** - Looks great on all devices
+- **Smooth Animations** - Powered by Framer Motion for fluid interactions
+- **Modern Styling** - Tailwind CSS with custom gradients and effects
+
+##  Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site will automatically reload as you edit files.
 
-## Learn More
+##  Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── page.tsx              # Home page with hero section
+├── layout.tsx            # Root layout
+├── navbar.tsx            # Navigation bar
+├── globals.css           # Global styles
+├── MotionSection.tsx     # Animation wrapper component
+├── AnimatedName.tsx      # Animated name display
+├── LavaBlobs.tsx         # Background blob animations
+├── LavaLampSVG.tsx       # SVG lava lamp graphics
+├── UniversityPopup.tsx   # University popup component
+├── about/
+│   └── page.tsx          # About page
+├── projects/
+│   └── page.tsx          # Projects showcase
+└── contact/
+    └── page.tsx          # Contact page
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##  Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: [Next.js 16.2.1](https://nextjs.org) - React framework with App Router
+- **UI Library**: [React 19.2.4](https://react.dev) - JavaScript library for building UIs
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com) - Utility-first CSS framework
+- **Animations**: [Framer Motion 12.38.0](https://www.framer.com/motion/) - Production-ready animation library
+- **Language**: [TypeScript 5](https://www.typescriptlang.org) - Type-safe JavaScript
+- **Linting**: [ESLint 9](https://eslint.org) - JavaScript code quality tool
 
-## Deploy on Vercel
+## Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Development server
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Production build
+npm run build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
+```
+
+##  Customization
+
+### Adding Skills
+Edit the skills array in `app/page.tsx` to add or modify your technical skills. Add corresponding skill images to `public/skills/`.
+
+### Updating Content
+- **About**: Edit `app/about/page.tsx`
+- **Projects**: Edit `app/projects/page.tsx`
+- **Contact**: Edit `app/contact/page.tsx`
+
+### Styling
+- Global styles: `app/globals.css`
+- Tailwind config: Uses default configuration
+- Custom gradients and colors are defined inline with Tailwind classes
+
+## Deployment
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Vercel will automatically detect Next.js and deploy
+
+[Read the Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more options.
+
+##  Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Framer Motion Documentation](https://www.framer.com/motion/)
+
+---
+
