@@ -4,7 +4,7 @@ import React, { RefObject } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 interface UniversityPopupProps {
-  targetRef: RefObject<HTMLDivElement>;
+  targetRef: RefObject<HTMLDivElement | null>;
 }
 
 export default function UniversityPopup({ targetRef }: UniversityPopupProps) {
