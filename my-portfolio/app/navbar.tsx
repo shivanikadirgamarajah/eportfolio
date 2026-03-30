@@ -1,18 +1,12 @@
-import Link from "next/link";
-
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-center py-6 bg-[#0f172a] shadow-lg">
+    <nav className="fixed w-full top-0 flex justify-center py-6 bg-[#0f172a] shadow-lg z-50">
       <div className="flex w-full max-w-5xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-3 text-white font-extrabold text-2xl tracking-tight">
-          <span className="bg-[#3b82f6] rounded-2xl w-10 h-10 flex items-center justify-center text-white font-bold text-xl shadow">E</span>
-          Portfolio
-        </Link>
-        <ul className="flex gap-10 text-lg font-semibold">
-          <li><Link className="text-white hover:text-[#3b82f6] transition" href="/">Home</Link></li>
-          <li><Link className="text-white hover:text-[#3b82f6] transition" href="/about">About</Link></li>
-          <li><Link className="text-white hover:text-[#3b82f6] transition" href="/projects">Projects</Link></li>
-          <li><Link className="text-white hover:text-[#3b82f6] transition" href="/contact">Contact</Link></li>
+        <ul className="flex w-full justify-between text-lg font-semibold">
+          <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="#home">Home</a></li>
+          <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="#about">About</a></li>
+          <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="#Experience">Experience</a></li>
+          <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="#resume">Contact</a></li>
         </ul>
       </div>
     </nav>
