@@ -113,7 +113,7 @@ const LavaBlobs: React.FC<LavaBlobsProps> = ({ enableMouseTracking = true }) => 
   useEffect(() => {
     const interval = setInterval(() => {
       setThemeIndex((prev) => (prev + 1) % THEMES.length);
-    }, 500);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -146,7 +146,7 @@ const LavaBlobs: React.FC<LavaBlobsProps> = ({ enableMouseTracking = true }) => 
     let targetX = 0;
     let targetY = 0;
     const maxOffset = 50;
-    const ease = 0.14;
+    const ease = 0.08;
     let animationFrame: number;
 
     function onMouseMove(e: MouseEvent) {
@@ -197,40 +197,7 @@ const LavaBlobs: React.FC<LavaBlobsProps> = ({ enableMouseTracking = true }) => 
             </linearGradient>
 
             <filter id="lavaBlur">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur" />
-              <feColorMatrix
-                in="blur"
-                type="matrix"
-                values="
-                  1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 30 -12"
-                result="goo"
-              />
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.008 0.02"
-                numOctaves="2"
-                seed="7"
-                result="noise"
-              >
-                <animate
-                  attributeName="baseFrequency"
-                  values="0.008 0.02;0.012 0.028;0.008 0.02"
-                  dur="12s"
-                  repeatCount="indefinite"
-                />
-              </feTurbulence>
-              <feDisplacementMap
-                in="goo"
-                in2="noise"
-                scale="18"
-                xChannelSelector="R"
-                yChannelSelector="G"
-                result="distorted"
-              />
-              <feBlend in="SourceGraphic" in2="distorted" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
             </filter>
           </defs>
 
@@ -241,22 +208,22 @@ const LavaBlobs: React.FC<LavaBlobsProps> = ({ enableMouseTracking = true }) => 
                        C1120 440, 1140 410, 1190 400
                        C1240 390, 1260 430, 1220 460
                        C1190 480, 1170 480, 1150 470 Z" transform="scale(0.8)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; -30 20; 20 30; 0 0" dur="15s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1200 470; 4 1200 470; -4 1200 470; 0 1200 470" dur="17s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; -15 10; -30 20; -15 25; 5 28; 20 30; 10 20; 0 5; 0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1200 470; 1 1200 470; 2 1200 470; 4 1200 470; 2 1200 470; -2 1200 470; -4 1200 470; -1 1200 470; 0 1200 470" dur="22s" additive="sum" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
               </path>
               <path d="M1300 390
                        C1270 360, 1290 320, 1340 310
                        C1390 300, 1410 340, 1370 380
                        C1340 410, 1320 410, 1300 390 Z" transform="scale(1.2)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; -25 15; 15 25; 0 0" dur="14s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1350 390; 3 1350 390; -3 1350 390; 0 1350 390" dur="16s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; -12.5 7.5; -25 15; -12.5 18.75; 3.75 21; 15 25; 7.5 15; 0 3.75; 0 0" dur="19s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1350 390; 0.75 1350 390; 1.5 1350 390; 3 1350 390; 1.5 1350 390; -1.5 1350 390; -3 1350 390; -0.75 1350 390; 0 1350 390" dur="21s" additive="sum" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
               </path>
               <path d="M1080 440
                        C1050 410, 1070 370, 1120 360
                        C1170 350, 1190 390, 1150 420
                        C1120 450, 1100 450, 1080 440 Z" transform="scale(0.9)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; 18 12; -12 18; 0 0" dur="13s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1130 440; 2 1130 440; -2 1130 440; 0 1130 440" dur="15s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; 9 6; 18 12; 13.5 15; -3.6 16.2; -12 18; -6 12; 0 1.8; 0 0" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1130 440; 0.5 1130 440; 1 1130 440; 2 1130 440; 1 1130 440; -1 1130 440; -2 1130 440; -0.5 1130 440; 0 1130 440" dur="20s" additive="sum" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
               </path>
               <path d="M1240 470
                        C1210 440, 1230 410, 1280 400
@@ -367,8 +334,8 @@ const LavaBlobs: React.FC<LavaBlobsProps> = ({ enableMouseTracking = true }) => 
                   C1000 250, 1020 120, 1240 100
                   C1360 80, 1380 220, 1300 320
                   C1220 420, 1120 370, 1100 300 Z" transform="scale(1.25)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; -120 -100; 100 -160; 0 0" dur="23s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1240 300; -7 1240 300; 7 1240 300; 0 1240 300" dur="25s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; -30 25; -60 50; -45 62.5; 25 65; 50 80; 25 50; 0 12.5; 0 0" dur="28s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1240 300; -1.75 1240 300; -3.5 1240 300; -7 1240 300; -3.5 1240 300; 3.5 1240 300; 7 1240 300; 1.75 1240 300; 0 1240 300" dur="30s" additive="sum" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1"/>
               </path>
               <path d="M800 110
                   C830 82, 880 90, 905 118

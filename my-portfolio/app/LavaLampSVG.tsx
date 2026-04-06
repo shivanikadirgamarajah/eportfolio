@@ -109,7 +109,7 @@ const LavaLampSVG: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setThemeIndex((prev) => (prev + 1) % THEMES.length);
-    }, 500);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -189,40 +189,7 @@ const LavaLampSVG: React.FC = () => {
             </linearGradient>
 
             <filter id="lavaBlur">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur" />
-              <feColorMatrix
-                in="blur"
-                type="matrix"
-                values="
-                  1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 30 -12"
-                result="goo"
-              />
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.008 0.02"
-                numOctaves="2"
-                seed="7"
-                result="noise"
-              >
-                <animate
-                  attributeName="baseFrequency"
-                  values="0.008 0.02;0.012 0.028;0.008 0.02"
-                  dur="12s"
-                  repeatCount="indefinite"
-                />
-              </feTurbulence>
-              <feDisplacementMap
-                in="goo"
-                in2="noise"
-                scale="18"
-                xChannelSelector="R"
-                yChannelSelector="G"
-                result="distorted"
-              />
-              <feBlend in="SourceGraphic" in2="distorted" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
             </filter>
 
             <mask id="textMask">
@@ -271,8 +238,8 @@ const LavaLampSVG: React.FC = () => {
                        C1120 440, 1140 410, 1190 400
                        C1240 390, 1260 430, 1220 460
                        C1190 480, 1170 480, 1150 470 Z" transform="scale(0.8)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; -30 20; 20 30; 0 0" dur="15s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1200 470; 4 1200 470; -4 1200 470; 0 1200 470" dur="17s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; -30 20; 20 30; 0 0" dur="2.5s" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1200 470; 4 1200 470; -4 1200 470; 0 1200 470" dur="3s" additive="sum" repeatCount="indefinite"/>
               </path>
               <path d="M1300 390
                        C1270 360, 1290 320, 1340 310
@@ -307,8 +274,8 @@ const LavaLampSVG: React.FC = () => {
                        C1060 390, 1080 340, 1140 330
                        C1200 320, 1220 370, 1180 410
                        C1140 450, 1120 440, 1100 420 Z" transform="scale(1.15)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; -40 30; 30 40; 0 0" dur="17s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1140 400; -6 1140 400; 6 1140 400; 0 1140 400" dur="19s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; -40 30; 30 40; 0 0" dur="3s" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1140 400; -6 1140 400; 6 1140 400; 0 1140 400" dur="3.5s" additive="sum" repeatCount="indefinite"/>
               </path>
               <path d="M1250 350
                        C1220 320, 1240 270, 1290 260
@@ -406,8 +373,8 @@ const LavaLampSVG: React.FC = () => {
                   C1000 250, 1020 120, 1240 100
                   C1360 80, 1380 220, 1300 320
                   C1220 420, 1120 370, 1100 300 Z" transform="scale(1.25)">
-                <animateTransform attributeName="transform" type="translate" values="0 0; -120 -100; 100 -160; 0 0" dur="23s" repeatCount="indefinite"/>
-                <animateTransform attributeName="transform" type="rotate" values="0 1240 300; -7 1240 300; 7 1240 300; 0 1240 300" dur="25s" additive="sum" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0; -120 -100; 100 -160; 0 0" dur="4.5s" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 1240 300; -7 1240 300; 7 1240 300; 0 1240 300" dur="5s" additive="sum" repeatCount="indefinite"/>
               </path>
               {/* small drifting piece */}
               <path d="M800 110

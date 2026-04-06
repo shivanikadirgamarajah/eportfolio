@@ -25,7 +25,7 @@ export default function UniversityPopup({ targetRef }: UniversityPopupProps) {
   return (
     <motion.div
       style={{ x, opacity, rotate }}
-      className="fixed -right-6 top-30 z-50 max-w-xs w-56 bg-[#1e1e1e] rounded-lg shadow-2xl border-2 border-[#3b82f6] overflow-hidden"
+      className="fixed -right-6 top-30 z-[1] pointer-events-none max-w-xs w-56 bg-[#1e1e1e] rounded-lg shadow-2xl border-2 border-[#3b82f6] overflow-hidden"
     >
       <img
         src="/university.png"
