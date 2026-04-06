@@ -237,7 +237,7 @@ export default function Projects() {
                     : { opacity: 0, y: -10, scale: 0.9 }
                 }
                 transition={{ duration: 0.3 }}
-                pointerEvents={hoveredIdx === idx ? "auto" : "none"}
+                style={{ pointerEvents: hoveredIdx === idx ? "auto" : "none" }}
               >
                 <div className="bg-gradient-to-br from-[#1a2943] via-[#1a2943]/95 to-[#0f172a]/80 backdrop-blur-lg border border-[#60a5fa]/50 rounded-xl p-6 shadow-2xl shadow-[#3b82f6]/20 max-h-[80vh] overflow-y-auto">
                   {/* Detail Header */}
