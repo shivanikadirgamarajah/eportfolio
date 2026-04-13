@@ -2,46 +2,64 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Projects() {
+  const router = useRouter();
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+  const [expandedGrowthIdx, setExpandedGrowthIdx] = useState<number | null>(null);
   
   const projects = [
     {
+      id: "outfit-recommender",
       title: "Outfit Recommender",
       event: "HackSocial Hackathon",
       date: "Aug 2025",
       description: "Developed a responsive web application that recommends outfits based on real-time weather data using a machine learning model. Built with Flask for the backend, TailwindCSS for the frontend, and scikit-learn for model training, the app uses the Open-Meteo API and HTML5 Geolocation to fetch weather conditions such as temperature, humidity, wind speed, and precipitation. These inputs are sent to a Flask server (backend written entirely in Python using libraries such as Pandas), where a Random Forest Classifier predicts the most suitable outfit. The prediction is then returned and displayed to the user through a clean, interactive interface.",
-      github: "https://github.com/shivanikadirgamarajah/outfit-recommender/tree/master"
+      github: "https://github.com/shivanikadirgamarajah/outfit-recommender/tree/master",
+      fullDescription: "Developed a responsive web application that recommends outfits based on real-time weather data using a machine learning model. Built with Flask for the backend, TailwindCSS for the frontend, and scikit-learn for model training, the app uses the Open-Meteo API and HTML5 Geolocation to fetch weather conditions such as temperature, humidity, wind speed, and precipitation. These inputs are sent to a Flask server (backend written entirely in Python using libraries such as Pandas), where a Random Forest Classifier predicts the most suitable outfit. The prediction is then returned and displayed to the user through a clean, interactive interface.",
+      images: ["/profile.jpg"]
     },
     {
+      id: "my-journal-app",
       title: "My Journal App",
       event: "Personal Project",
       date: "May 2025 – Jul 2025",
       description: "Developed and published a secure and user-friendly mobile application called 'My Journal', now available on the Google Play Store under the publisher name Shivilo. Built using Flutter and Android Studio, the app allows users to easily record and organize their daily thoughts. Key features include password protection for enhanced privacy, automatic timestamps, and the ability to edit or delete entries with helpful confirmation prompts. I also designed a clean and intuitive user interface, ensuring a smooth and accessible experience. This project showcases my skills in mobile app development, UI/UX design, and deploying production-ready software through my own Google developer account.",
-      github: "https://github.com/shivanikadirgamarajah/My_Journal"
+      github: "https://github.com/shivanikadirgamarajah/My_Journal",
+      fullDescription: "Developed and published a secure and user-friendly mobile application called 'My Journal', now available on the Google Play Store under the publisher name Shivilo. Built using Flutter and Android Studio, the app allows users to easily record and organize their daily thoughts. Key features include password protection for enhanced privacy, automatic timestamps, and the ability to edit or delete entries with helpful confirmation prompts. I also designed a clean and intuitive user interface, ensuring a smooth and accessible experience. This project showcases my skills in mobile app development, UI/UX design, and deploying production-ready software through my own Google developer account.",
+      images: ["/profile.jpg"]
     },
     {
+      id: "gym-connect",
       title: "Gym Connect",
       event: "Full-Stack Web App",
       date: "Personal Project",
       description: "A full-stack web app that helps York University students find workout partners for drop-in sports sessions. The platform automatically syncs live recreation schedules from York's registration portal and uses a smart time-overlap matching algorithm to pair students based on shared sports interests and availability. Features include intelligent buddy matching with real-time time-range intersection detection, automated web scraping of York's drop-in schedule using Cheerio with deduplication and session lifecycle management, real-time in-app messaging between matched partners, secure OTP authentication restricted to York University email domains, and a responsive UI with sport-specific card designs, glassmorphism effects, and smooth animations. Supports 10+ sports including basketball, badminton, volleyball, futsal, soccer, and pickleball. Built to solve the real problem of finding someone to play with on campus.",
-      github: "https://gym-connect-three.vercel.app/"
+      github: "https://gym-connect-three.vercel.app/",
+      fullDescription: "A full-stack web app that helps York University students find workout partners for drop-in sports sessions. The platform automatically syncs live recreation schedules from York's registration portal and uses a smart time-overlap matching algorithm to pair students based on shared sports interests and availability. Features include intelligent buddy matching with real-time time-range intersection detection, automated web scraping of York's drop-in schedule using Cheerio with deduplication and session lifecycle management, real-time in-app messaging between matched partners, secure OTP authentication restricted to York University email domains, and a responsive UI with sport-specific card designs, glassmorphism effects, and smooth animations. Supports 10+ sports including basketball, badminton, volleyball, futsal, soccer, and pickleball. Built to solve the real problem of finding someone to play with on campus.",
+      images: ["/profile.jpg"]
     },
     {
+      id: "your-journal-companion",
       title: "Your Journal Companion",
       event: "UofT Hackathon",
       date: "Personal Project",
       description: "A privacy-first, AI-powered journaling web application that analyzes user journal entries to generate personalized insights, activity recommendations, and guided prompts for future entries. Built with Next.js, TypeScript, and TailwindCSS, the application uses a multi-agent AI architecture to adapt recommendations based on user behavior over time. The system includes an Extractor Agent that derives mood and theme signals from journal entries, a Risk Agent that evaluates safety in a non-diagnostic and responsible manner, and a Coach Agent that generates personalized activities and next-day writing prompts. User interactions are tracked as analytics-style events and stored locally, enabling a self-improving experience while keeping all sensitive data on-device. Designed with ethical AI principles in mind, the app avoids diagnostic language, includes crisis resources, supports data export for sharing with mental health professionals, and prioritizes user privacy by minimizing external data transmission.",
-      github: "https://lnkd.in/evk7p5es"
+      github: "https://lnkd.in/evk7p5es",
+      fullDescription: "A privacy-first, AI-powered journaling web application that analyzes user journal entries to generate personalized insights, activity recommendations, and guided prompts for future entries. Built with Next.js, TypeScript, and TailwindCSS, the application uses a multi-agent AI architecture to adapt recommendations based on user behavior over time. The system includes an Extractor Agent that derives mood and theme signals from journal entries, a Risk Agent that evaluates safety in a non-diagnostic and responsible manner, and a Coach Agent that generates personalized activities and next-day writing prompts. User interactions are tracked as analytics-style events and stored locally, enabling a self-improving experience while keeping all sensitive data on-device. Designed with ethical AI principles in mind, the app avoids diagnostic language, includes crisis resources, supports data export for sharing with mental health professionals, and prioritizes user privacy by minimizing external data transmission.",
+      images: ["/profile.jpg"]
     },
     {
+      id: "hangman-web-game",
       title: "Hangman Web Game",
       event: "EECS 1012",
       date: "Apr 2024",
       description: "Built a full-stack Hangman game using HTML, CSS, JavaScript, jQuery, Node.js, and Express.js. Implemented DOM manipulation, AJAX communication, and server-side game logic. Used JSON for data exchange and tested locally with a responsive interface. This project showcases proficiency in front-end interactivity, asynchronous client-server communication, and backend game state management.",
-      github: null
+      github: null,
+      fullDescription: "Built a full-stack Hangman game using HTML, CSS, JavaScript, jQuery, Node.js, and Express.js. Implemented DOM manipulation, AJAX communication, and server-side game logic. Used JSON for data exchange and tested locally with a responsive interface. This project showcases proficiency in front-end interactivity, asynchronous client-server communication, and backend game state management.",
+      images: ["/profile.jpg"]
     }
   ];
 
@@ -194,6 +212,7 @@ export default function Projects() {
                   borderColor: hoveredIdx === idx ? "#60a5fa" : "#3b82f6",
                   backgroundColor: hoveredIdx === idx ? "rgba(26, 41, 67, 0.7)" : "rgba(26, 41, 67, 0.3)",
                 }}
+                onClick={() => router.push(`/projects/${project.id}`)}
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#60a5fa]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
                 
@@ -237,7 +256,7 @@ export default function Projects() {
                     : { opacity: 0, y: -10, scale: 0.9 }
                 }
                 transition={{ duration: 0.3 }}
-                style={{ pointerEvents: hoveredIdx === idx ? "auto" : "none" }}
+                style={{ pointerEvents: "none" }}
               >
                 <div className="bg-gradient-to-br from-[#1a2943] via-[#1a2943]/95 to-[#0f172a]/80 backdrop-blur-lg border border-[#60a5fa]/50 rounded-xl p-6 shadow-2xl shadow-[#3b82f6]/20 max-h-[80vh] overflow-y-auto">
                   {/* Detail Header */}
@@ -263,9 +282,13 @@ export default function Projects() {
 
                   {/* Read More Button */}
                   <motion.button
-                    onClick={() => setExpandedIdx(expandedIdx === idx ? null : idx)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setExpandedIdx(expandedIdx === idx ? null : idx);
+                    }}
                     className="text-xs font-semibold text-[#60a5fa] hover:text-[#93c5fd] transition-colors mb-4 underline cursor-pointer"
                     whileHover={{ scale: 1.05 }}
+                    style={{ pointerEvents: "auto" }}
                   >
                     {expandedIdx === idx ? "Read Less" : "Read More"}
                   </motion.button>
@@ -278,6 +301,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-[#60a5fa] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#60a5fa]/10 transition-colors duration-300 group/cta"
                       whileHover={{ gap: 8 }}
+                      style={{ pointerEvents: "auto" }}
                     >
                       View Project
                       <motion.span
@@ -314,6 +338,106 @@ export default function Projects() {
           <p className="text-[#d4d4d4]/50 text-xs md:text-sm font-light">
             More projects coming soon...
           </p>
+        </motion.div>
+
+        {/* Growth & Reflection Section */}
+        <motion.div
+          id="growth-as-developer"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-24 md:mt-32 pt-20 md:pt-24 border-t border-[#3b82f6]/20"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="mb-12 md:mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+              My Growth as a Developer
+            </h2>
+            <p className="text-[#d4d4d4]/70 text-base md:text-lg font-light">
+              A reflection on my journey from writing code that works to building meaningful, user-centered systems
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+            {[
+              {
+                title: "From Code to Systems",
+                paragraphs: [
+                  "Throughout my academic and professional journey as a Computer Science student at York University, I have experienced significant growth in both my technical skills and my understanding of software development as a discipline. Initially, I approached programming as a task focused primarily on writing code that works. However, through coursework, hands-on projects, and real-world experience, my perspective has evolved to recognize software development as a complex, interdisciplinary process that integrates problem-solving, user experience, collaboration, and ethical responsibility.",
+                  "In the classroom, I developed a strong foundation in programming, data structures, and software design principles. These experiences helped me build confidence in solving structured problems and understanding theoretical concepts. However, it was through applying this knowledge to real-world projects—such as my Outfit Recommender and Buddy Finder applications—that I began to bridge the gap between theory and practice."
+                ]
+              },
+              {
+                title: "Real-World Impact",
+                paragraphs: [
+                  "My growth became even more evident through experiences outside the classroom, particularly during my internship at Rebhatech Software Solutions and my co-op role at MyRide901. Contributing to production-level applications, collaborating in Agile environments, and delivering features used by thousands of users shifted my mindset from completing assignments to building scalable, reliable systems.",
+                  "At MyRide901, deploying bug fixes and contributing to a live product with over 10,000 users taught me the importance of writing maintainable code and considering real-world impact. Similarly, working in team-based environments strengthened my communication, adaptability, and ability to manage competing priorities."
+                ]
+              },
+              {
+                title: "Continuous Refinement",
+                paragraphs: [
+                  "Critically reflecting on my work, I recognize that earlier in my development, I focused heavily on functionality while overlooking important aspects such as system design, scalability, and long-term maintainability. For instance, some of my earlier projects lacked clear architecture and efficient data handling, which would limit their ability to scale.",
+                  "Moving forward, I aim to improve by adopting stronger software engineering practices, including modular design, thorough testing, and performance optimization. This commitment to continuous improvement drives me to evaluate and enhance my work with each new project."
+                ]
+              },
+              {
+                title: "Technology & Responsibility",
+                paragraphs: [
+                  "Another important shift in my perspective is my understanding of the role of technology in society. Through projects like my AI-powered journaling application, which incorporates ethical AI principles and prioritizes user privacy, I have begun to see software development not just as a technical skill but as a responsibility.",
+                  "I now consider factors such as accessibility, sustainability, and ethical impact when designing solutions. This aligns with my broader goal of creating technology that is both innovative and socially responsible. Building applications like Buddy Finder to address real-world challenges has reinforced the importance of interdisciplinary thinking in computer science."
+                ]
+              }
+            ].map((section, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + idx * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-[#1a2943]/40 via-[#1a2943]/20 to-[#0f172a]/10 backdrop-blur-sm border border-[#3b82f6]/20 rounded-2xl p-8 md:p-10 hover:border-[#3b82f6]/40 transition-all duration-300"
+              >
+                <h3 className="text-xl md:text-2xl font-bold text-[#60a5fa] mb-6">
+                  {section.title}
+                </h3>
+                <div className="space-y-4">
+                  {section.paragraphs.map((paragraph, pIdx) => (
+                    <motion.div key={pIdx} animate={{ height: "auto" }} transition={{ duration: 0.3 }}>
+                      <p className="text-[#d4d4d4]/85 leading-relaxed text-sm md:text-base font-light">
+                        {expandedGrowthIdx === idx ? paragraph : paragraph.substring(0, 150) + "..."}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+                <motion.button
+                  onClick={() => setExpandedGrowthIdx(expandedGrowthIdx === idx ? null : idx)}
+                  className="text-xs font-semibold text-[#60a5fa] hover:text-[#93c5fd] transition-colors mt-4 underline cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {expandedGrowthIdx === idx ? "Read Less" : "Read More"}
+                </motion.button>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Closing Statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-12 md:mt-16 bg-gradient-to-r from-[#60a5fa]/10 via-[#3b82f6]/10 to-[#60a5fa]/5 border border-[#60a5fa]/30 rounded-2xl p-8 md:p-12 text-center"
+          >
+            <p className="text-lg md:text-xl text-[#d4d4d4]/90 leading-relaxed font-light">
+              Overall, my experiences both inside and outside the classroom have transformed me into a more thoughtful, adaptable, and purpose-driven developer. I have moved from focusing solely on writing functional code to designing meaningful, user-centered systems that address real-world challenges. Moving forward, I will continue to refine my technical skills, critically evaluate my work, and pursue opportunities that allow me to create impactful and sustainable solutions.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>

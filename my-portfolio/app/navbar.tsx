@@ -6,6 +6,7 @@ export default function Navbar() {
           <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="/#home">Home</a></li>
           <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="/#about">About</a></li>
           <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="/#Experience">Experience</a></li>
+          <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="/projects">Projects</a></li>
           <li className="flex-1 text-center"><a className="block w-full py-2 text-white hover:text-[#3b82f6] transition" href="/#resume">Contact</a></li>
         </ul>
       </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import TypedText from "../TypedText";
 
 const GoalsSection = () => {
   const goals = [
@@ -43,7 +44,17 @@ const GoalsSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-[#a78bfa] via-[#818cf8] to-[#6366f1] bg-clip-text text-transparent">
-            My Passion & Vision
+            <TypedText
+              strings={[
+                "My <span class='text-[#a78bfa]'>Passion</span>",
+                "My <span class='text-[#818cf8]'>Vision</span>",
+              ]}
+              typeSpeed={60}
+              backSpeed={40}
+              backDelay={2000}
+              loop={true}
+              showCursor={true}
+            />
           </h2>
 
           {/* Main passion statement */}
