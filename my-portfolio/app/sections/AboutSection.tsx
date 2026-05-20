@@ -207,7 +207,7 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-[#ffffff] via-[#e0f2fe] to-[#bfdbfe] bg-clip-text text-transparent"
               >
-                Let's Build Something Remarkable
+                Let&apos;s Build Something Remarkable
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
@@ -216,92 +216,8 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed"
               >
-                I'm always excited to collaborate with visionary teams and bring ambitious ideas to life through thoughtful design and powerful technology.
+                I&apos;m always excited to collaborate with visionary teams and bring ambitious ideas to life through thoughtful design and powerful technology.
               </motion.p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Video Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <div className="space-y-6">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-[#ffffff] via-[#bfdbfe] to-[#60a5fa] bg-clip-text text-transparent"
-            >
-              Watch My Story
-            </motion.h3>
-
-            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/8 to-white/3 border border-white/15 rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:border-[#60a5fa]/50 transition-all duration-500">
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#60a5fa]/0 to-[#3b82f6]/0 group-hover:from-[#60a5fa]/10 group-hover:to-[#3b82f6]/5 transition-all duration-500 pointer-events-none"></div>
-
-              <div className="relative z-10">
-                {/* Video Container with 16:9 aspect ratio */}
-                <div className="relative w-full bg-black rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
-                  <video
-                    className="absolute top-0 left-0 w-full h-full"
-                    controls
-                    poster="/video-thumbnail.jpg"
-                  >
-                    <source src="/me.mov" type="video/quicktime" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="text-white/70 text-center mt-6 text-base leading-relaxed"
-                >
-                </motion.p>
-
-                {/* Reflections Button */}
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.55 }}
-                  viewport={{ once: true }}
-                  className="flex justify-center mt-8"
-                >
-                  <motion.a
-                    href="/projects#growth-as-developer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#3b82f6] text-white px-8 py-3 rounded-full font-semibold text-sm md:text-base shadow-lg hover:shadow-xl transition-all duration-300 border border-[#60a5fa]/50 hover:border-[#60a5fa] group relative overflow-hidden"
-                  >
-                    <span className="relative z-10">Reflections</span>
-                    <motion.svg
-                      className="w-4 h-4 md:w-5 md:h-5 relative z-10"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </motion.svg>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-[#60a5fa] via-[#3b82f6] to-[#60a5fa] rounded-full"
-                      initial={{ x: "100%" }}
-                      whileHover={{ x: "-100%" }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </motion.a>
-                </motion.div>
-              </div>
             </div>
           </div>
         </motion.div>
