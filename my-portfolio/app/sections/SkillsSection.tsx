@@ -174,7 +174,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
 
                 {/* Content */}
                 <div className="relative flex items-center justify-center gap-3 z-10">
-                  <span className="font-semibold tracking-wide">View my full skills</span>
+                  <span className="font-semibold tracking-wide">View my skills</span>
                   <motion.span
                     initial={{ x: 0 }}
                     whileHover={{ x: 6 }}
