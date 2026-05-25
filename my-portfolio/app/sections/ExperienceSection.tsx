@@ -5,8 +5,33 @@ import { motion } from "framer-motion";
 
 export default function ExperienceSection() {
   return (
-    <section id="Experience" className="w-full py-40 px-8 relative bg-gradient-to-b from-[#0f172a] to-[#1a3a52]">
-      <div className="max-w-6xl mx-auto">
+    <section id="Experience" className="w-full py-40 px-8 relative overflow-hidden bg-[#07111f]">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(96,165,250,0.24),transparent_34%),linear-gradient(180deg,#07111f_0%,#0f2d45_48%,#07111f_100%)]" />
+        <motion.div
+          className="absolute left-[-12%] top-[12%] h-96 w-96 rounded-full bg-[#60a5fa]/20 blur-3xl"
+          animate={{ x: [0, 40, 0], y: [0, -24, 0], opacity: [0.45, 0.75, 0.45] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute right-[-10%] bottom-[16%] h-[28rem] w-[28rem] rounded-full bg-[#22d3ee]/14 blur-3xl"
+          animate={{ x: [0, -36, 0], y: [0, 28, 0], opacity: [0.35, 0.65, 0.35] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage: "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
+          }}
+        />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0f172a] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0f172a] to-transparent" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
