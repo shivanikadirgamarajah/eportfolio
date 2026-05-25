@@ -137,9 +137,8 @@ export default function ResumeSection() {
 
             {/* Google Icon */}
             <motion.a
-              href="https://google.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:shivanikadirgamrajah@gmail.com"
+              aria-label="Email Shivani Kadirgamarajah"
               whileHover={{ scale: 1.15, y: -5 }}
               whileTap={{ scale: 0.95 }}
               className="group relative"
