@@ -61,7 +61,7 @@ const projectsData = [
       title: "Focusic",
       event: "Conhacks Hackathon",
       date: "Apr 2026",
-      images: ["/projects/focusic/focusic.png"],
+      images: ["/projects/focusic/focus4.png", "/projects/focusic/focus3.jpeg"],
       github: "https://github.com/shivanikadirgamarajah/focusic",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "YouTube Data API", "Groq AI"],
       fullDescription: "Focusic is an AI-powered productivity music web app built with Next.js, React, TypeScript, and Tailwind CSS that delivers personalized focus music based on user mood, work type, listening behavior, and preferences. The app integrates the YouTube Data API to search, stream, and manage track metadata through a persistent in-app music player, while Groq-powered AI routes classify and rank tracks by genre, focus score, and use case. It features global playback with full controls, a customizable Pomodoro timer with session tracking, onboarding and profile-based personalization, and an activity calendar that visualizes focus sessions across the year. The application is structured with reusable TypeScript models and components and uses client-side localStorage to persist user preferences, listening history, timer state, and productivity data for a seamless, personalized experience.",
@@ -164,7 +164,7 @@ export default function ProjectDetail() {
           className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#3b82f6] to-[#60a5fa] text-white font-bold text-lg md:text-xl mb-12 md:mb-16 hover:shadow-lg hover:shadow-[#3b82f6]/50 transition-all rounded-lg"
           whileHover={{ scale: 1.05, gap: 12 }}
         >
-          <span>←</span> Back to Projects
+          <span>←</span>
         </motion.button>
 
         {/* Project Header */}

@@ -232,20 +232,6 @@ export default function Projects() {
                   </h3>
                 </div>
 
-                {/* Hover Indicator */}
-                <motion.div 
-                  className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1"
-                  animate={{ opacity: hoveredIdx === idx ? 1 : 0.5 }}
-                >
-                  <motion.span 
-                    animate={{ scale: hoveredIdx === idx ? 1.2 : 1 }}
-                    className="w-1.5 h-1.5 bg-[#60a5fa] rounded-full"
-                  />
-                  <motion.span 
-                    animate={{ scale: hoveredIdx === idx ? 1 : 0.8 }}
-                    className="w-1.5 h-1.5 bg-[#60a5fa] rounded-full opacity-50"
-                  />
-                </motion.div>
               </motion.div>
 
               {/* Detail Popover */}
