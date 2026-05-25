@@ -227,7 +227,7 @@ export default function AboutSection() {
                     opacity: [0, 0.9, 0],
                   }}
                   transition={{
-                    duration: 1,
+                    duration: 2.4,
                     repeat: Infinity,
                     repeatDelay: 5,
                     delay: firework.delay,
@@ -264,7 +264,7 @@ export default function AboutSection() {
                         duration: 2.4,
                         repeat: Infinity,
                         repeatDelay: 5,
-                        delay: firework.delay + sparkIdx * 0.015,
+                        delay: firework.delay + sparkIdx * 0.003,
                         ease: [0.22, 1, 0.36, 1],
                       }}
                     />
@@ -296,10 +296,10 @@ export default function AboutSection() {
                         scale: [0, 1, 0],
                       }}
                       transition={{
-                        duration: 3,
+                        duration: 2.4,
                         repeat: Infinity,
                         repeatDelay: 5,
-                        delay: firework.delay + 0.2,
+                        delay: firework.delay + 0.05,
                         ease: "easeOut",
                       }}
                     />
