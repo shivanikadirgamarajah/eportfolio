@@ -7,8 +7,6 @@ import { useRouter } from "next/navigation";
 export default function Projects() {
   const router = useRouter();
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
-  const [expandedGrowthIdx, setExpandedGrowthIdx] = useState<number | null>(null);
   
   const projects = [
     {
@@ -16,19 +14,17 @@ export default function Projects() {
       title: "Outfit Recommender",
       event: "HackSocial Hackathon",
       date: "Aug 2025",
-      description: "Developed a responsive web application that recommends outfits based on real-time weather data using a machine learning model. Built with Flask for the backend, TailwindCSS for the frontend, and scikit-learn for model training, the app uses the Open-Meteo API and HTML5 Geolocation to fetch weather conditions such as temperature, humidity, wind speed, and precipitation. These inputs are sent to a Flask server (backend written entirely in Python using libraries such as Pandas), where a Random Forest Classifier predicts the most suitable outfit. The prediction is then returned and displayed to the user through a clean, interactive interface.",
+      description: "Built and published “My Journal” on the Google Play Store — a secure, intuitive journaling app developed with Flutter that combines privacy-focused features with a seamless user experience, showcasing my full-stack mobile development and UI/UX skills.",
       github: "https://github.com/shivanikadirgamarajah/outfit-recommender/tree/master",
-      fullDescription: "Developed a responsive web application that recommends outfits based on real-time weather data using a machine learning model. Built with Flask for the backend, TailwindCSS for the frontend, and scikit-learn for model training, the app uses the Open-Meteo API and HTML5 Geolocation to fetch weather conditions such as temperature, humidity, wind speed, and precipitation. These inputs are sent to a Flask server (backend written entirely in Python using libraries such as Pandas), where a Random Forest Classifier predicts the most suitable outfit. The prediction is then returned and displayed to the user through a clean, interactive interface.",
       images: ["/profile.jpg"]
     },
     {
       id: "my-journal-app",
       title: "My Journal App",
-      event: "Personal Project",
+      event: "Google Play Store App",
       date: "May 2025 – Jul 2025",
-      description: "Developed and published a secure and user-friendly mobile application called 'My Journal', now available on the Google Play Store under the publisher name Shivilo. Built using Flutter and Android Studio, the app allows users to easily record and organize their daily thoughts. Key features include password protection for enhanced privacy, automatic timestamps, and the ability to edit or delete entries with helpful confirmation prompts. I also designed a clean and intuitive user interface, ensuring a smooth and accessible experience. This project showcases my skills in mobile app development, UI/UX design, and deploying production-ready software through my own Google developer account.",
+      description: "Built and published “My Journal” on the Google Play Store — a secure, intuitive journaling app developed with Flutter that combines privacy-focused features with a seamless user experience, showcasing my full-stack mobile development and UI/UX skills.",
       github: "https://github.com/shivanikadirgamarajah/My_Journal",
-      fullDescription: "Developed and published a secure and user-friendly mobile application called 'My Journal', now available on the Google Play Store under the publisher name Shivilo. Built using Flutter and Android Studio, the app allows users to easily record and organize their daily thoughts. Key features include password protection for enhanced privacy, automatic timestamps, and the ability to edit or delete entries with helpful confirmation prompts. I also designed a clean and intuitive user interface, ensuring a smooth and accessible experience. This project showcases my skills in mobile app development, UI/UX design, and deploying production-ready software through my own Google developer account.",
       images: ["/profile.jpg"]
     },
     {
@@ -36,9 +32,8 @@ export default function Projects() {
       title: "Gym Connect",
       event: "Full-Stack Web App",
       date: "Personal Project",
-      description: "A full-stack web app that helps York University students find workout partners for drop-in sports sessions. The platform automatically syncs live recreation schedules from York's registration portal and uses a smart time-overlap matching algorithm to pair students based on shared sports interests and availability. Features include intelligent buddy matching with real-time time-range intersection detection, automated web scraping of York's drop-in schedule using Cheerio with deduplication and session lifecycle management, real-time in-app messaging between matched partners, secure OTP authentication restricted to York University email domains, and a responsive UI with sport-specific card designs, glassmorphism effects, and smooth animations. Supports 10+ sports including basketball, badminton, volleyball, futsal, soccer, and pickleball. Built to solve the real problem of finding someone to play with on campus.",
+      description: "An AI-powered campus sports matching platform that automatically syncs York University drop-in schedules and instantly connects students with compatible workout partners based on shared sports interests and overlapping availability.",
       github: "https://gym-connect-three.vercel.app/",
-      fullDescription: "A full-stack web app that helps York University students find workout partners for drop-in sports sessions. The platform automatically syncs live recreation schedules from York's registration portal and uses a smart time-overlap matching algorithm to pair students based on shared sports interests and availability. Features include intelligent buddy matching with real-time time-range intersection detection, automated web scraping of York's drop-in schedule using Cheerio with deduplication and session lifecycle management, real-time in-app messaging between matched partners, secure OTP authentication restricted to York University email domains, and a responsive UI with sport-specific card designs, glassmorphism effects, and smooth animations. Supports 10+ sports including basketball, badminton, volleyball, futsal, soccer, and pickleball. Built to solve the real problem of finding someone to play with on campus.",
       images: ["/profile.jpg"]
     },
     {
@@ -46,9 +41,8 @@ export default function Projects() {
       title: "Your Journal Companion",
       event: "UofT Hackathon",
       date: "Personal Project",
-      description: "A privacy-first, AI-powered journaling web application that analyzes user journal entries to generate personalized insights, activity recommendations, and guided prompts for future entries. Built with Next.js, TypeScript, and TailwindCSS, the application uses a multi-agent AI architecture to adapt recommendations based on user behavior over time. The system includes an Extractor Agent that derives mood and theme signals from journal entries, a Risk Agent that evaluates safety in a non-diagnostic and responsible manner, and a Coach Agent that generates personalized activities and next-day writing prompts. User interactions are tracked as analytics-style events and stored locally, enabling a self-improving experience while keeping all sensitive data on-device. Designed with ethical AI principles in mind, the app avoids diagnostic language, includes crisis resources, supports data export for sharing with mental health professionals, and prioritizes user privacy by minimizing external data transmission.",
+      description: "An AI-powered, privacy-first journaling app that turns your thoughts into personalized insights, mood-aware recommendations, and guided prompts — all while keeping your data securely on-device.",
       github: "https://lnkd.in/evk7p5es",
-      fullDescription: "A privacy-first, AI-powered journaling web application that analyzes user journal entries to generate personalized insights, activity recommendations, and guided prompts for future entries. Built with Next.js, TypeScript, and TailwindCSS, the application uses a multi-agent AI architecture to adapt recommendations based on user behavior over time. The system includes an Extractor Agent that derives mood and theme signals from journal entries, a Risk Agent that evaluates safety in a non-diagnostic and responsible manner, and a Coach Agent that generates personalized activities and next-day writing prompts. User interactions are tracked as analytics-style events and stored locally, enabling a self-improving experience while keeping all sensitive data on-device. Designed with ethical AI principles in mind, the app avoids diagnostic language, includes crisis resources, supports data export for sharing with mental health professionals, and prioritizes user privacy by minimizing external data transmission.",
       images: ["/profile.jpg"]
     },
     {
@@ -56,11 +50,19 @@ export default function Projects() {
       title: "Hangman Web Game",
       event: "EECS 1012",
       date: "Apr 2024",
-      description: "Built a full-stack Hangman game using HTML, CSS, JavaScript, jQuery, Node.js, and Express.js. Implemented DOM manipulation, AJAX communication, and server-side game logic. Used JSON for data exchange and tested locally with a responsive interface. This project showcases proficiency in front-end interactivity, asynchronous client-server communication, and backend game state management.",
+      description: "Built a full-stack Hangman game with real-time client-server interaction, dynamic gameplay, and responsive UI using JavaScript, Node.js, Express, and AJAX.",
       github: null,
-      fullDescription: "Built a full-stack Hangman game using HTML, CSS, JavaScript, jQuery, Node.js, and Express.js. Implemented DOM manipulation, AJAX communication, and server-side game logic. Used JSON for data exchange and tested locally with a responsive interface. This project showcases proficiency in front-end interactivity, asynchronous client-server communication, and backend game state management.",
       images: ["/profile.jpg"]
+    },
+    {
+      id: "focusic",
+      title: "Focusic",
+      event: "Conhacks Hackathon",
+      date: "Apr 2026",
+      description: "Focusic is an AI-powered focus music platform that personalizes the perfect soundtrack for deep work, helping you stay productive, focused, and in flow.",
+      github: "https://github.com/shivanikadirgamarajah/focusic",
     }
+    
   ];
 
   const containerVariants = {
@@ -274,49 +276,27 @@ export default function Projects() {
                     transition={{ duration: 0.3 }}
                   >
                     <p className="text-sm text-[#d4d4d4]/90 leading-relaxed mb-4">
-                      {expandedIdx === idx 
-                        ? project.description 
-                        : project.description.substring(0, 200) + "..."}
+                      {project.description}
                     </p>
                   </motion.div>
 
-                  {/* Read More Button */}
+                  {/* CTA */}
                   <motion.button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setExpandedIdx(expandedIdx === idx ? null : idx);
-                    }}
-                    className="text-xs font-semibold text-[#60a5fa] hover:text-[#93c5fd] transition-colors mb-4 underline cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
+                    type="button"
+                    onClick={() => router.push(`/projects/${project.id}`)}
+                    className="inline-flex items-center gap-2 text-[#60a5fa] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#60a5fa]/10 transition-colors duration-300 group/cta"
+                    whileHover={{ gap: 8 }}
                     style={{ pointerEvents: "auto" }}
                   >
-                    {expandedIdx === idx ? "Read Less" : "Read More"}
-                  </motion.button>
-
-                  {/* CTA */}
-                  {project.github ? (
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#60a5fa] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#60a5fa]/10 transition-colors duration-300 group/cta"
-                      whileHover={{ gap: 8 }}
-                      style={{ pointerEvents: "auto" }}
+                    Click me
+                    <motion.span
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                      className="group-hover/cta:text-[#93c5fd]"
                     >
-                      View Project
-                      <motion.span
-                        animate={{ x: [0, 4, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="group-hover/cta:text-[#93c5fd]"
-                      >
-                        →
-                      </motion.span>
-                    </motion.a>
-                  ) : (
-                    <div className="text-xs text-[#d4d4d4]/50 font-light">
-                      Course project • No public repository
-                    </div>
-                  )}
+                      →
+                    </motion.span>
+                  </motion.button>
 
                   {/* Arrow indicator pointing down to card */}
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
