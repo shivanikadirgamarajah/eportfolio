@@ -199,6 +199,58 @@ export default function AboutSection() {
             {/* Background glow */}
             <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-[#60a5fa]/20 to-[#3b82f6]/20 -z-10 blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
+            {/* Firework effects */}
+            {[
+              { left: "18%", top: "30%", delay: 0, color: "#700404" },
+              { left: "80%", top: "28%", delay: 0.8, color: "#07f52b" },
+            ].map((firework, fireworkIdx) => (
+              <motion.div
+                key={fireworkIdx}
+                className="absolute pointer-events-none z-0"
+                style={{ left: firework.left, top: firework.top }}
+              >
+                <motion.span
+                  className="absolute -left-1 -top-1 h-2 w-2 rounded-full"
+                  style={{ backgroundColor: firework.color }}
+                  animate={{ scale: [0, 1.4, 0], opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 1.8,
+                    repeat: Infinity,
+                    delay: firework.delay,
+                    ease: "easeOut",
+                  }}
+                />
+                {[
+                  { x: 0, y: -42 },
+                  { x: 32, y: -32 },
+                  { x: 44, y: 0 },
+                  { x: 32, y: 32 },
+                  { x: 0, y: 44 },
+                  { x: -32, y: 32 },
+                  { x: -44, y: 0 },
+                  { x: -32, y: -32 },
+                ].map((spark, sparkIdx) => (
+                  <motion.span
+                    key={sparkIdx}
+                    className="absolute left-0 top-0 h-1.5 w-1.5 rounded-full shadow-[0_0_12px_currentColor]"
+                    style={{ color: firework.color, backgroundColor: "currentColor" }}
+                    animate={{
+                      x: [0, spark.x],
+                      y: [0, spark.y],
+                      scale: [0, 1, 0],
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 1.8,
+                      repeat: Infinity,
+                      delay: firework.delay,
+                      ease: "easeOut",
+                    }}
+                  />
+                ))}
+              </motion.div>
+            ))}
+
             <div className="relative z-10 text-center space-y-6">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
