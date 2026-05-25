@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function AboutSection() {
+  const fireworksRef = useRef<HTMLDivElement | null>(null);
+  const isFireworksInView = useInView(fireworksRef, { amount: 0.4 });
+
   return (
     <section id="aboutme" className="w-full py-40 px-8 relative bg-gradient-to-b from-[#0a1628] via-[#1a3a52] to-[#0f172a] overflow-hidden">
       {/* Enhanced animated background orbs with multiple layers */}
@@ -192,7 +195,10 @@ export default function AboutSection() {
           transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="backdrop-blur-2xl bg-gradient-to-r from-[#60a5fa]/15 via-[#3b82f6]/15 to-[#60a5fa]/10 border border-[#60a5fa]/40 rounded-3xl p-12 md:p-16 relative overflow-hidden group hover:border-[#60a5fa]/60 transition-all duration-500">
+          <div
+            ref={fireworksRef}
+            className="backdrop-blur-2xl bg-gradient-to-r from-[#60a5fa]/15 via-[#3b82f6]/15 to-[#60a5fa]/10 border border-[#60a5fa]/40 rounded-3xl p-12 md:p-16 relative overflow-hidden group hover:border-[#60a5fa]/60 transition-all duration-500"
+          >
             {/* Animated gradient overlay */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#60a5fa]/0 via-[#60a5fa]/5 to-[#60a5fa]/0 opacity-0 group-hover:opacity-100 group-hover:via-[#60a5fa]/10 transition-all duration-500"></div>
 
@@ -222,13 +228,20 @@ export default function AboutSection() {
                     background: `radial-gradient(circle, ${firework.color} 0%, transparent 70%)`,
                     filter: "blur(4px)",
                   }}
-                  animate={{
-                    scale: [0, 1.8, 0],
-                    opacity: [0, 0.9, 0],
-                  }}
+                  animate={
+                    isFireworksInView
+                      ? {
+                          scale: [0, 1.8, 0],
+                          opacity: [0, 0.9, 0],
+                        }
+                      : {
+                          scale: 0,
+                          opacity: 0,
+                        }
+                  }
                   transition={{
                     duration: 2.4,
-                    repeat: Infinity,
+                    repeat: isFireworksInView ? Infinity : 0,
                     repeatDelay: 5,
                     delay: firework.delay,
                     ease: "easeOut",
@@ -254,15 +267,24 @@ export default function AboutSection() {
                           0 0 48px ${firework.color}
                         `,
                       }}
-                      animate={{
-                        x: [0, Math.cos(angle) * radius],
-                        y: [0, Math.sin(angle) * radius],
-                        scale: [0, 1.2, 0],
-                        opacity: [0, 1, 0],
-                      }}
+                      animate={
+                        isFireworksInView
+                          ? {
+                              x: [0, Math.cos(angle) * radius],
+                              y: [0, Math.sin(angle) * radius],
+                              scale: [0, 1.2, 0],
+                              opacity: [0, 1, 0],
+                            }
+                          : {
+                              x: 0,
+                              y: 0,
+                              scale: 0,
+                              opacity: 0,
+                            }
+                      }
                       transition={{
                         duration: 2.4,
-                        repeat: Infinity,
+                        repeat: isFireworksInView ? Infinity : 0,
                         repeatDelay: 5,
                         delay: firework.delay + sparkIdx * 0.003,
                         ease: [0.22, 1, 0.36, 1],
@@ -289,15 +311,24 @@ export default function AboutSection() {
                           0 0 14px ${firework.color}
                         `,
                       }}
-                      animate={{
-                        x: [0, Math.cos(angle) * radius],
-                        y: [0, Math.sin(angle) * radius + 10],
-                        opacity: [0, 0.9, 0],
-                        scale: [0, 1, 0],
-                      }}
+                      animate={
+                        isFireworksInView
+                          ? {
+                              x: [0, Math.cos(angle) * radius],
+                              y: [0, Math.sin(angle) * radius + 10],
+                              opacity: [0, 0.9, 0],
+                              scale: [0, 1, 0],
+                            }
+                          : {
+                              x: 0,
+                              y: 0,
+                              opacity: 0,
+                              scale: 0,
+                            }
+                      }
                       transition={{
                         duration: 2.4,
-                        repeat: Infinity,
+                        repeat: isFireworksInView ? Infinity : 0,
                         repeatDelay: 5,
                         delay: firework.delay + 0.05,
                         ease: "easeOut",
