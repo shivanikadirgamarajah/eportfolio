@@ -8,12 +8,33 @@ export default function AboutSection() {
   const isFireworksInView = useInView(fireworksRef, { amount: 0.4 });
 
   return (
-    <section id="aboutme" className="w-full py-40 px-8 relative bg-gradient-to-b from-[#0a1628] via-[#1a3a52] to-[#0f172a] overflow-hidden">
-      {/* Enhanced animated background orbs with multiple layers */}
+    <section id="aboutme" className="w-full py-40 px-8 relative isolate bg-[#07111f] overflow-hidden">
+      {/* Layered atmospheric background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#60a5fa] rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob"></div>
-        <div className="absolute top-96 -right-20 w-96 h-96 bg-[#3b82f6] rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 left-1/3 w-72 h-72 bg-[#0ea5e9] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#1a3a52_0%,#07111f_18%,#0b1e35_50%,#07111f_82%,#0f172a_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(34,211,238,0.24),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(168,85,247,0.18),transparent_30%),radial-gradient(circle_at_55%_90%,rgba(59,130,246,0.22),transparent_34%)]" />
+        <motion.div
+          className="absolute left-[-18%] top-[18%] h-56 w-[136%] -rotate-6 bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.20),rgba(96,165,250,0.26),rgba(168,85,247,0.16),transparent)] blur-3xl"
+          animate={{ x: ["-3%", "3%", "-3%"], opacity: [0.45, 0.8, 0.45] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute left-[-10%] bottom-[10%] h-48 w-[120%] rotate-6 bg-[linear-gradient(90deg,transparent,rgba(16,185,129,0.14),rgba(14,165,233,0.20),rgba(99,102,241,0.14),transparent)] blur-3xl"
+          animate={{ x: ["4%", "-4%", "4%"], opacity: [0.35, 0.65, 0.35] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage: "linear-gradient(to bottom, transparent, black 16%, black 84%, transparent)",
+          }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.055)_44%,transparent_58%)] opacity-60" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1a3a52] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0f172a] to-transparent" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
