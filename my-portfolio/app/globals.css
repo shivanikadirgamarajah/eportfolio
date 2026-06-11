@@ -24,6 +24,33 @@ section {
   }
 }
 
+@keyframes reptile-scales {
+  0% {
+    background-position: 0 0, 14px 10px;
+    transform: scale(1) skewX(0deg);
+    filter: contrast(1.25) saturate(1.2);
+  }
+
+  35% {
+    background-position: 7px 5px, 21px 15px;
+    transform: scale(1.035) skewX(-1.5deg);
+    filter: contrast(1.55) saturate(1.6);
+  }
+
+  70% {
+    background-position: 16px 11px, 30px 21px;
+    transform: scale(1.02) skewX(1.5deg);
+    filter: contrast(1.45) saturate(1.45);
+  }
+
+  100% {
+    background-position: 28px 20px, 42px 30px;
+    transform: scale(1) skewX(0deg);
+    filter: contrast(1.25) saturate(1.2);
+  }
+}
+
+
 .animate-blob {
   animation: blob 7s infinite;
 }

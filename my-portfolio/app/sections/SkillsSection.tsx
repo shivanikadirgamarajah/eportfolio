@@ -61,7 +61,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
           viewport={{ once: true }}
           className="mb-20 text-center"
         >
-          
+
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -79,7 +79,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
               initial={{ height: 0 }}
               whileInView={{ height: "calc(100% - 140px)" }}
               viewport={{ once: true }}
-              animate={{ 
+              animate={{
                 boxShadow: [
                   "0 0 15px rgba(167, 139, 250, 0.7), inset 0 0 10px rgba(167, 139, 250, 0.3)",
                   "0 0 35px rgba(167, 139, 250, 1), inset 0 0 15px rgba(167, 139, 250, 0.5)",
@@ -99,7 +99,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                   ease: "easeInOut",
                 }
               }}
-              style={{ 
+              style={{
                 pointerEvents: "none",
               }}
             />
@@ -121,11 +121,11 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
               >
                 <motion.div
                   whileHover={{ scale: 1.3, rotate: 12 }}
-                  animate={{ 
+                  animate={{
                     scale: [1, 1, 1, 1.2, 1, 1, 1, 1, 1, 1],
                     rotate: [0, 0, 0, 10, 0, 0, 0, 0, 0, 0]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 4,
                     repeat: Infinity,
                     repeatDelay: idx * 0.5,
@@ -142,13 +142,13 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                   <motion.div
                     className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#a78bfa] to-[#818cf8] opacity-0 group-hover:opacity-100 blur-lg"
                     animate={{ opacity: [0, 0, 0, 0.6, 0] }}
-                    transition={{ 
+                    transition={{
                       duration: 4,
                       repeat: Infinity,
                       repeatDelay: idx * 0.5
                     }}
                   />
-                  
+
                   <img
                     src={skill.img}
                     alt={skill.name}
@@ -177,9 +177,9 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                 className="relative inline-block px-10 py-5 font-bold text-white text-lg rounded-2xl overflow-hidden group"
               >
                 {/* Animated gradient background */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-[#a78bfa] via-[#818cf8] to-[#6366f1]"
-                  animate={{ 
+                  animate={{
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
                   transition={{ duration: 5, repeat: Infinity }}
@@ -198,6 +198,35 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                   style={{
                     background: "radial-gradient(circle at center, rgba(212, 197, 249, 0.4) 0%, transparent 70%)",
                     filter: "blur(12px)",
+                  }}
+                />
+
+                <div className="absolute inset-0 opacity-0 bg-emerald-900/20 mix-blend-overlay transition-opacity duration-300 group-hover:opacity-100" />
+
+                {/* Reptile half-circle scale texture */}
+                <div
+                  className="absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-80 group-hover:animate-[reptile-scales_1.4s_ease-in-out_infinite]"
+                  style={{
+                    backgroundColor: "rgba(6, 78, 59, 0.42)",
+                    backgroundImage: `
+      radial-gradient(ellipse at 50% 100%,
+        rgba(236, 253, 245, 0.55) 0 22%,
+        rgba(74, 222, 128, 0.35) 23% 42%,
+        rgba(2, 6, 23, 0.65) 43% 48%,
+        rgba(6, 78, 59, 0.72) 49% 100%
+      ),
+      radial-gradient(ellipse at 50% 0%,
+        rgba(236, 253, 245, 0.45) 0 22%,
+        rgba(74, 222, 128, 0.28) 23% 42%,
+        rgba(2, 6, 23, 0.6) 43% 48%,
+        rgba(4, 120, 87, 0.58) 49% 100%
+      )
+    `,
+                    backgroundSize: "28px 20px",
+                    backgroundPosition: "0 0, 14px 10px",
+                    filter: "contrast(1.5) saturate(1.55)",
+                    maskImage:
+                      "linear-gradient(90deg, transparent, black 12%, black 88%, transparent)",
                   }}
                 />
 
@@ -249,21 +278,21 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                 animate={{ opacity: [0.5, 0.8, 0.5] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
-              
+
               <div className="relative bg-gradient-to-br from-[#1e1e1e] to-[#252526] rounded-2xl shadow-2xl overflow-hidden border border-[#3e3e42] group hover:border-[#818cf8] transition-colors duration-300">
                 <div className="bg-gradient-to-r from-[#2d2d30] to-[#252526] border-b border-[#3e3e42] px-4 py-3 flex items-center gap-3">
                   <div className="flex gap-2">
-                    <motion.div 
+                    <motion.div
                       className="w-3 h-3 rounded-full bg-[#ff5f56]"
                       whileHover={{ scale: 1.2 }}
                       transition={{ duration: 0.2 }}
                     />
-                    <motion.div 
+                    <motion.div
                       className="w-3 h-3 rounded-full bg-[#ffbd2e]"
                       whileHover={{ scale: 1.2 }}
                       transition={{ duration: 0.2 }}
                     />
-                    <motion.div 
+                    <motion.div
                       className="w-3 h-3 rounded-full bg-[#27c93f]"
                       whileHover={{ scale: 1.2 }}
                       transition={{ duration: 0.2 }}
