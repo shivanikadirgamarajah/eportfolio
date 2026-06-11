@@ -11,8 +11,8 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
       className="w-full py-32 px-8 bg-[#070b18] relative isolate overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#0f172a_0%,#080d1d_32%,#10172c_68%,#1a3a52_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_22%_16%,rgba(167,139,250,0.16),transparent_34%),radial-gradient(ellipse_at_82%_70%,rgba(129,140,248,0.14),transparent_38%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#0f172a_0%,#080d1d_30%,#101b33_66%,#123f63_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_22%_16%,rgba(167,139,250,0.15),transparent_34%),radial-gradient(ellipse_at_82%_70%,rgba(56,189,248,0.16),transparent_38%)]" />
         <motion.div
           className="absolute left-[-12%] top-[18%] h-24 w-[124%] -rotate-6 bg-[linear-gradient(90deg,transparent,rgba(167,139,250,0.16),rgba(129,140,248,0.12),transparent)] blur-2xl"
           animate={{ x: ["-3%", "3%", "-3%"], opacity: [0.34, 0.58, 0.34] }}
@@ -49,7 +49,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
         <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.055)_46%,transparent_58%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,11,24,0.16)_46%,rgba(7,11,24,0.78)_100%)]" />
         <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0f172a] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#1a3a52] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#123f63] to-transparent" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">

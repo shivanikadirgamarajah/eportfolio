@@ -11,29 +11,29 @@ export default function AboutSection() {
     <section id="aboutme" className="w-full py-40 px-8 relative isolate bg-[#07111f] overflow-hidden">
       {/* Layered atmospheric background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#1a3a52_0%,#07111f_18%,#0b1e35_50%,#07111f_82%,#0f172a_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(34,211,238,0.24),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(168,85,247,0.18),transparent_30%),radial-gradient(circle_at_55%_90%,rgba(59,130,246,0.22),transparent_34%)]" />
-        <motion.div
-          className="absolute left-[-18%] top-[18%] h-56 w-[136%] -rotate-6 bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.20),rgba(96,165,250,0.26),rgba(168,85,247,0.16),transparent)] blur-3xl"
-          animate={{ x: ["-3%", "3%", "-3%"], opacity: [0.45, 0.8, 0.45] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute left-[-10%] bottom-[10%] h-48 w-[120%] rotate-6 bg-[linear-gradient(90deg,transparent,rgba(16,185,129,0.14),rgba(14,165,233,0.20),rgba(99,102,241,0.14),transparent)] blur-3xl"
-          animate={{ x: ["4%", "-4%", "4%"], opacity: [0.35, 0.65, 0.35] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#123f63_0%,#0a2742_24%,#050b18_56%,#0f172a_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_18%,rgba(255,255,255,0.10),transparent_38%),radial-gradient(ellipse_at_50%_82%,rgba(255,255,255,0.07),transparent_42%)]" />
         <div
-          className="absolute inset-0 opacity-[0.07]"
+          className="absolute inset-x-[-10%] top-[8%] h-[78%] opacity-[0.10] [transform:perspective(900px)_rotateX(58deg)]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            maskImage: "linear-gradient(to bottom, transparent, black 16%, black 84%, transparent)",
+              "linear-gradient(rgba(255,255,255,0.72) 1px, transparent 1px), linear-gradient(90deg, rgba(125,211,252,0.70) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
+            maskImage: "linear-gradient(to bottom, transparent, black 18%, black 74%, transparent)",
           }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.055)_44%,transparent_58%)] opacity-60" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1a3a52] to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.08)_42%,transparent_54%)] opacity-70" />
+        <div
+          className="absolute inset-0 opacity-[0.13]"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(255,255,255,0.85) 1px, transparent 1.5px)",
+            backgroundSize: "34px 34px",
+            maskImage: "linear-gradient(to bottom, transparent, black 24%, black 68%, transparent)",
+          }}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,11,24,0.20)_48%,rgba(5,11,24,0.82)_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#123f63] to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0f172a] to-transparent" />
       </div>
 

@@ -7,7 +7,7 @@ export default function ExperienceSection() {
   return (
     <section id="Experience" className="w-full py-40 px-8 relative overflow-hidden bg-[#07111f]">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(96,165,250,0.24),transparent_34%),linear-gradient(180deg,#07111f_0%,#0f2d45_48%,#07111f_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.20),transparent_34%),linear-gradient(180deg,#0f172a_0%,#07111f_28%,#0d3656_68%,#123f63_100%)]" />
         <motion.div
           className="absolute left-[-12%] top-[12%] h-96 w-96 rounded-full bg-[#60a5fa]/20 blur-3xl"
           animate={{ x: [0, 40, 0], y: [0, -24, 0], opacity: [0.45, 0.75, 0.45] }}
@@ -28,7 +28,7 @@ export default function ExperienceSection() {
           }}
         />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0f172a] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0f172a] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#123f63] to-transparent" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
