@@ -8,9 +8,51 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       ref={ref}
       id="about"
-      className="w-full py-32 px-8 bg-gradient-to-b from-[#0f172a] to-[#1a3a52] relative overflow-hidden"
+      className="w-full py-32 px-8 bg-[#070b18] relative isolate overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#0f172a_0%,#080d1d_32%,#10172c_68%,#1a3a52_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_22%_16%,rgba(167,139,250,0.16),transparent_34%),radial-gradient(ellipse_at_82%_70%,rgba(129,140,248,0.14),transparent_38%)]" />
+        <motion.div
+          className="absolute left-[-12%] top-[18%] h-24 w-[124%] -rotate-6 bg-[linear-gradient(90deg,transparent,rgba(167,139,250,0.16),rgba(129,140,248,0.12),transparent)] blur-2xl"
+          animate={{ x: ["-3%", "3%", "-3%"], opacity: [0.34, 0.58, 0.34] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage: "linear-gradient(to bottom, transparent, black 14%, black 84%, transparent)",
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.16]"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(196,181,253,0.72) 1px, transparent 1.5px)",
+            backgroundSize: "28px 28px",
+            maskImage: "linear-gradient(to bottom, transparent, black 20%, black 76%, transparent)",
+          }}
+        />
+        <motion.div
+          className="absolute right-[8%] top-[18%] h-[46%] w-px bg-gradient-to-b from-transparent via-[#a78bfa]/45 to-transparent"
+          animate={{ opacity: [0.2, 0.65, 0.2], scaleY: [0.9, 1.08, 0.9] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute left-[14%] bottom-[14%] h-px w-[34%] bg-gradient-to-r from-transparent via-[#818cf8]/45 to-transparent"
+          animate={{ opacity: [0.18, 0.58, 0.18], scaleX: [0.86, 1.06, 0.86] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.055)_46%,transparent_58%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,11,24,0.16)_46%,rgba(7,11,24,0.78)_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0f172a] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#1a3a52] to-transparent" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
