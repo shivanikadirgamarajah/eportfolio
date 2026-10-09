@@ -23,6 +23,7 @@ const projectsData = [
     date: "May 2025 – Jul 2025",
     fullDescription: "Developed and published a secure and user-friendly mobile application called 'My Journal', now available on the Google Play Store under the publisher name Shivilo. Built using Flutter and Android Studio, the app allows users to easily record and organize their daily thoughts. Key features include password protection for enhanced privacy, automatic timestamps, and the ability to edit or delete entries with helpful confirmation prompts. I also designed a clean and intuitive user interface, ensuring a smooth and accessible experience. This project showcases my skills in mobile app development, UI/UX design, and deploying production-ready software through my own Google developer account.",
     images: ["/projects/playstore/journalplay.png"],
+    website: "https://play.google.com/store/apps/details?id=com.shivilo.journalapp",
     github: "https://github.com/shivanikadirgamarajah/My_Journal",
     technologies: ["Flutter", "Android Studio", "Dart", "Mobile Development", "UI/UX Design"]
   },
@@ -33,7 +34,8 @@ const projectsData = [
     date: "Personal Project",
     fullDescription: "A full-stack web app that helps York University students find workout partners for drop-in sports sessions. The platform automatically syncs live recreation schedules from York's registration portal and uses a smart time-overlap matching algorithm to pair students based on shared sports interests and availability. Features include intelligent buddy matching with real-time time-range intersection detection, automated web scraping of York's drop-in schedule using Cheerio with deduplication and session lifecycle management, real-time in-app messaging between matched partners, secure OTP authentication restricted to York University email domains, and a responsive UI with sport-specific card designs, glassmorphism effects, and smooth animations. Supports 10+ sports including basketball, badminton, volleyball, futsal, soccer, and pickleball. Built to solve the real problem of finding someone to play with on campus.",
     images: ["/projects/gym/1773930364069.jpeg", "/projects/gym/1773930520321.jpeg", "/projects/gym/1773930530611.jpeg", "/projects/gym/1773930570730.jpeg"],
-    github: "https://gym-connect-three.vercel.app/",
+    github: "https://github.com/shivanikadirgamarajah/gym-connect",
+    website: "https://gym-connect-three.vercel.app/",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Node.js", "Web Scraping", "Authentication"]
   },
   {
@@ -44,6 +46,7 @@ const projectsData = [
     fullDescription: "A privacy-first, AI-powered journaling web application that analyzes user journal entries to generate personalized insights, activity recommendations, and guided prompts for future entries. Built with Next.js, TypeScript, and TailwindCSS, the application uses a multi-agent AI architecture to adapt recommendations based on user behavior over time. The system includes an Extractor Agent that derives mood and theme signals from journal entries, a Risk Agent that evaluates safety in a non-diagnostic and responsible manner, and a Coach Agent that generates personalized activities and next-day writing prompts. User interactions are tracked as analytics-style events and stored locally, enabling a self-improving experience while keeping all sensitive data on-device. Designed with ethical AI principles in mind, the app avoids diagnostic language, includes crisis resources, supports data export for sharing with mental health professionals, and prioritizes user privacy by minimizing external data transmission.",
     images: ["/projects/journalhackathon/journal.png"],
     github: "https://lnkd.in/evk7p5es",
+    website: "https://yourjournalcompanion.vercel.app",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "AI/ML", "Multi-agent Architecture", "Privacy-First Design"]
   },
   {
@@ -63,6 +66,7 @@ const projectsData = [
       date: "Apr 2026",
       images: ["/projects/focusic/focus4.png", "/projects/focusic/focus3.jpeg"],
       github: "https://github.com/shivanikadirgamarajah/focusic",
+      website: "https://focusic.vercel.app/",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "YouTube Data API", "Groq AI"],
       fullDescription: "Focusic is an AI-powered productivity music web app built with Next.js, React, TypeScript, and Tailwind CSS that delivers personalized focus music based on user mood, work type, listening behavior, and preferences. The app integrates the YouTube Data API to search, stream, and manage track metadata through a persistent in-app music player, while Groq-powered AI routes classify and rank tracks by genre, focus score, and use case. It features global playback with full controls, a customizable Pomodoro timer with session tracking, onboarding and profile-based personalization, and an activity calendar that visualizes focus sessions across the year. The application is structured with reusable TypeScript models and components and uses client-side localStorage to persist user preferences, listening history, timer state, and productivity data for a seamless, personalized experience.",
   }
@@ -158,13 +162,28 @@ export default function ProjectDetail() {
         {/* Back Button */}
         <motion.button
           onClick={() => router.push("/projects")}
+          type="button"
+          aria-label="Back"
+          title="Back"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#3b82f6] to-[#60a5fa] text-white font-bold text-lg md:text-xl mb-12 md:mb-16 hover:shadow-lg hover:shadow-[#3b82f6]/50 transition-all rounded-lg"
-          whileHover={{ scale: 1.05, gap: 12 }}
+          transition={{ duration: 0.18, ease: "easeOut" }}
+          className="group mb-12 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#60a5fa]/30 bg-gradient-to-br from-[#1e3a5f]/80 to-[#111d32]/80 text-[#bfdbfe] shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-150 hover:border-[#60a5fa]/70 hover:from-[#2563a5]/70 hover:to-[#1e3a5f]/80 hover:text-white hover:shadow-lg hover:shadow-[#3b82f6]/25 md:mb-16"
+          whileHover={{ x: -3, scale: 1.05 }}
+          whileTap={{ scale: 0.94 }}
         >
-          <span>←</span>
+          <svg
+            className="h-5 w-5 transition-transform duration-150 group-hover:-translate-x-0.5"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
         </motion.button>
 
         {/* Project Header */}
@@ -217,7 +236,8 @@ export default function ProjectDetail() {
                   <h3 className="text-sm font-bold text-[#60a5fa] tracking-widest uppercase">
                     Technologies & Skills
                   </h3>
-                  {project.github && (
+                  <div className="flex items-center gap-3">
+                    {project.github && (
                     <motion.a
                       href={project.github}
                       target="_blank"
@@ -242,6 +262,35 @@ export default function ProjectDetail() {
                       </svg>
                     </motion.a>
                   )}
+                    {project.website && (
+                      <motion.a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} website`}
+                        title="Open website"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.35 }}
+                        className="group relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#60a5fa]/40 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#93c5fd]/80 hover:bg-[#60a5fa]/15 hover:shadow-lg hover:shadow-[#3b82f6]/30"
+                        whileHover={{ scale: 1.08, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#60a5fa] opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-50" />
+                        <svg
+                          className="relative h-5 w-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <circle cx="12" cy="12" r="9" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z" />
+                        </svg>
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, idx) => (
