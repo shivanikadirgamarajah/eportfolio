@@ -14,6 +14,7 @@ const projectsData = [
     fullDescription: "Developed a responsive web application that recommends outfits based on real-time weather data using a machine learning model. Built with Flask for the backend, TailwindCSS for the frontend, and scikit-learn for model training, the app uses the Open-Meteo API and HTML5 Geolocation to fetch weather conditions such as temperature, humidity, wind speed, and precipitation. These inputs are sent to a Flask server (backend written entirely in Python using libraries such as Pandas), where a Random Forest Classifier predicts the most suitable outfit. The prediction is then returned and displayed to the user through a clean, interactive interface.",
     images: ["/projects/outfit/screenshot.png", "/projects/outfit/screenshottwo.png"],
     github: "https://github.com/shivanikadirgamarajah/outfit-recommender/tree/master",
+    website: "https://outfit-recommender-phi.vercel.app",
     technologies: ["Flask", "React", "TailwindCSS", "scikit-learn", "Python", "Machine Learning"]
   },
   {
