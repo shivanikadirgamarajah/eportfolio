@@ -326,15 +326,35 @@ export default function ProjectDetail() {
                 transition={{ duration: 0.3 }}
                 className="relative rounded-2xl overflow-hidden group pt-6 md:pt-15"
               >
-                <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
-                  <Image
-                    src={project.images[currentImageIdx]}
-                    alt={`${project.title} screenshot ${currentImageIdx + 1}`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
-                </div>
+                {project.website ? (
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${project.title} website`}
+                    className="block cursor-pointer"
+                  >
+                    <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
+                      <Image
+                        src={project.images[currentImageIdx]}
+                        alt={`${project.title} screenshot ${currentImageIdx + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
+                    <Image
+                      src={project.images[currentImageIdx]}
+                      alt={`${project.title} screenshot ${currentImageIdx + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
+                  </div>
+                )}
 
                 {/* Navigation Arrows */}
                 <motion.button
@@ -399,15 +419,35 @@ export default function ProjectDetail() {
                   transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
                   className="relative rounded-2xl overflow-hidden group"
                 >
-                  <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
-                    <Image
-                      src={image}
-                      alt={`${project.title} screenshot ${idx + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
-                  </div>
+                  {project.website ? (
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} website`}
+                      className="block cursor-pointer"
+                    >
+                      <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
+                        <Image
+                          src={image}
+                          alt={`${project.title} screenshot ${idx + 1}`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
+                      <Image
+                        src={image}
+                        alt={`${project.title} screenshot ${idx + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
+                    </div>
+                  )}
                 </motion.div>
               ))
             )}
