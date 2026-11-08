@@ -14,7 +14,7 @@ export default function Projects() {
       title: "Outfit Recommender",
       event: "HackSocial Hackathon",
       date: "Aug 2025",
-      description: "Built and published “My Journal” on the Google Play Store — a secure, intuitive journaling app developed with Flutter that combines privacy-focused features with a seamless user experience, showcasing my full-stack mobile development and UI/UX skills.",
+      description: "A machine-learning web application that recommends outfits using real-time weather data. Built with Python, Flask, scikit-learn, and the Open-Meteo API, using a Random Forest classifier to generate personalized recommendations.",
       github: "https://github.com/shivanikadirgamarajah/outfit-recommender/tree/master",
       images: ["/profile.jpg"]
     },
