@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My ePortfolio",
-  description: "My personal portfolio site",
+  title: "Shivani Kadirgamarajah | Software Developer",
+  description:
+    "Computer Science student at York University building full-stack, mobile, and AI applications.",
 };
 
 import Navbar from "./navbar";
